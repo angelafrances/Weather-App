@@ -2,13 +2,13 @@
 
 var latitude = "";
 var longitude = "";
-var localTemp = "";
 
 $(document).ready(function() {
 
   function geoFindMe() {
     var loc = document.getElementById("cityState");
     var temps = document.getElementById("temperature");
+    var descrip = document.getElementById("tempDescrip")
    
   
     if (!navigator.geolocation){
@@ -27,10 +27,15 @@ $(document).ready(function() {
         success: function(weatherData){
           console.log(weatherData);
           loc.innerHTML = " " +weatherData.name;
-          localTemp = weatherData.main.temp;
-          temps.innerHTML = localTemp.toFixed() + " °C";
-          // console.log(x);
-          // temps.innerHTML = x + " °C"
+          temps.innerHTML = weatherData.main.temp.toFixed() + " °C";
+          
+          var iconUrl = "https://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png";
+          var wIcon = document.createElement("IMG");
+          wIcon.setAttribute("src", iconUrl);
+          temps.appendChild(wIcon);
+          
+          descrip.innerHTML = weatherData.weather[0].description;
+          
         }
        })
 
