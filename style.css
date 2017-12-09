@@ -1,16 +1,21 @@
+body {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 .container {
-    font-family: 'Montserrat', serif !important;
-    width: 60%;
-    background-color: lightblue;
-    text-align: center;
-    border-radius: 12px;
-    
+  font-family: 'Montserrat', serif !important;
+  width: 20%;
+  height: 600px;
+  background-color: lightblue;
+  text-align: center;
+  border-radius: 12px;
+
 }
 
 #temperature {
-    font-weight: bold;
-    font-size: 34px;
+  font-weight: bold;
+  font-size: 34px;
 }
 
 .switch {
@@ -20,7 +25,9 @@
   height: 34px;
 }
 
-.switch input {display:none;}
+.switch input {
+  display: none;
+}
 
 .slider {
   position: absolute;
@@ -46,19 +53,20 @@
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
+
 .slider.round {
   border-radius: 34px;
 }
@@ -66,6 +74,3 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-
-

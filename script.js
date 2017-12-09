@@ -37,7 +37,6 @@ $(document).ready(function() {
 
           descrip.innerHTML = weatherData.weather[0].description;
           store = weatherData.main.temp.toFixed();
-          console.log(store);
 
         }
 
@@ -58,20 +57,22 @@ $(document).ready(function() {
 
   }
   geoFindMe();
-
+  
 
 })
 
 $('#toggle').change(function() {
   var x = document.getElementById('tempDisplay').innerHTML = "";
-  if($(this).is(':checked')){
-    var x = (store - 32) * (5/9);
+  if ($(this).is(':checked')) {
+    var x = (store - 32) * (5 / 9);
     document.getElementById('tempDisplay').innerHTML = (x.toFixed() + " °C");
-    
-  } else {
-    var y = x * 9/5 + 32;
+    x = store;
+
+  }
+  else {
+    var y = x * 9 / 5 + 32;
     document.getElementById('tempDisplay').innerHTML = (y.toFixed() + " °F");
+    y = store;
 
   }
 })
-
